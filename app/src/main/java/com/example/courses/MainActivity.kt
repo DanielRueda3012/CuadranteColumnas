@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -79,8 +78,7 @@ fun TopicCard(topic: Topic, modifier: Modifier = Modifier) {
                     painter = painterResource(id = topic.imageRes),
                     contentDescription = null,
                     modifier = modifier
-                        .size(width = 68.dp, height = 68.dp)
-                        .aspectRatio(1f),
+                        .size(width = 68.dp, height = 68.dp),
                     contentScale = ContentScale.Crop
                 )
             }
