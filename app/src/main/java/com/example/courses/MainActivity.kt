@@ -6,7 +6,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -40,13 +39,12 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             CoursesTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
                     TopicGrid(
-                        modifier = Modifier.padding(dimensionResource(R.dimen.padding_small))
+                        //modifier = Modifier.padding(dimensionResource(R.dimen.padding_small))
                     )
                 }
             }
@@ -73,7 +71,7 @@ fun TopicGrid(modifier: Modifier = Modifier) {
 fun TopicCard(topic: Topic, modifier: Modifier = Modifier) {
     Card {
         Row {
-            Box {
+
                 Image(
                     painter = painterResource(id = topic.imageRes),
                     contentDescription = null,
@@ -81,7 +79,7 @@ fun TopicCard(topic: Topic, modifier: Modifier = Modifier) {
                         .size(width = 68.dp, height = 68.dp),
                     contentScale = ContentScale.Crop
                 )
-            }
+
 
             Column {
                 Text(
@@ -111,12 +109,17 @@ fun TopicCard(topic: Topic, modifier: Modifier = Modifier) {
         }
     }
 }
+
 @Preview(showBackground = true)
 @Composable
 fun TopicGridPreview() {
     CoursesTheme {
         TopicGrid(
-            modifier = Modifier.fillMaxSize()
+
+
+
+
+            //modifier = Modifier.fillMaxSize()
         )
     }
 }
